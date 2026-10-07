@@ -30,7 +30,7 @@ API REST em C# com autenticação JWT e SQL Server. Reúne três programas do de
 ## Estrutura
 
 ```
-TargetDesafio.Api/
+Prototipo-ERP-Backend-main/
 ├── Controllers/          # Endpoints (finos, só orquestram)
 ├── Data/                 # DbContext, seed e vendas.json (dados de exemplo)
 ├── Domain/               # Entidades (Usuario, Produto, Movimentacao)
@@ -86,7 +86,7 @@ dotnet user-secrets set "Jwt:Key" "uma-chave-secreta-longa-com-mais-de-32-caract
 ## Como rodar
 
 ```powershell
-cd TargetDesafio.Api
+cd Prototipo-ERP-Backend-main
 
 # 1) Criar a migration inicial (apenas na primeira vez)
 dotnet ef migrations add Inicial
@@ -94,6 +94,16 @@ dotnet ef migrations add Inicial
 # 2) Executar (aplica a migration e faz o seed automaticamente em Development)
 dotnet run
 ```
+
+> [!TIP]
+> Se o `dotnet run` falhar com erro de migration (por exemplo, `There is already an object named 'Produtos' in the database`), o banco já existe na sua máquina com um histórico diferente. Apague-o e rode de novo:
+>
+> ```bash
+> dotnet ef database drop --force
+> dotnet run
+> ```
+>
+> O banco é recriado com as tabelas e os dados iniciais (usuário `admin` e os 5 produtos).
 
 A API sobe em **http://localhost:4200**.
 Para recarregar automaticamente ao salvar arquivos: `dotnet watch run`.
