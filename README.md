@@ -10,8 +10,8 @@ API REST em C# com autenticação JWT e SQL Server. Reúne três programas do de
 | C# | 12 |
 | Entity Framework Core (SqlServer + Design) | 8.0.10 |
 | Microsoft.AspNetCore.Authentication.JwtBearer | 8.0.10 |
-| SQL Server | 2019 ou superior (LocalDB, Express ou Docker) |
-| dotnet-ef (ferramenta global) | 8.x |
+| SQL Server | 2019 ou superior (LocalDB) |
+| dotnet-ef (migrations) | 8.x |
 
 ## Pré-requisitos
 
